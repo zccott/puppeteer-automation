@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Quipo browser extension (offScreen)</title>
+</head>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <h1>Permissions Required</h1>
+  <p>To use this extension, please grant the following permissions:</p>
+  <ul>
+    <li>Microphone access for calls</li>
+    <li>Autoplay and sound playback</li>
+  </ul>
+  <button id="requestPermissions">Grant Permissions</button>
+  <script src="./twilio.js"></script>
+  <script src="./offScreen.js"></script>
+</body>

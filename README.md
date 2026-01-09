@@ -2,6 +2,7 @@
 
 This project uses Puppeteer to automate testing for a browser extension.
 
+
 ## Prerequisites
 - **Node.js**: Ensure Node.js (v14 or higher) is installed.
 - **npm**: Comes with Node.js for package management.

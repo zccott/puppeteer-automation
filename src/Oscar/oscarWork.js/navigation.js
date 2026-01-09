@@ -13,7 +13,7 @@ async function verifyUrl(page, expectedUrl) {
 async function interactWithElements(page) {
   const elements = [
     { selector: '#firstMenu', name: "firstMenu" },
-    { selector: "#openReactApp", name: "React App Button" }
+    { selector: "#upToDateSearch", name: "#upToDateSearch" }
   ];
 
   for (const element of elements) {

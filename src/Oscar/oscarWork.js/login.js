@@ -4,7 +4,7 @@ const { waitAndType, waitAndClick, waitForNavigation, navigateToUrl } = require(
 
 async function launchBrowser(extensionPath, head) {
     return await puppeteer.launch({
-        headless: head,
+        headless: false,
         timeout: 1200000,
         args: [
             '--no-sandbox',
@@ -14,6 +14,10 @@ async function launchBrowser(extensionPath, head) {
             '--disable-popup-blocking',
             '--disable-notifications',
             '--disable-infobars',
+            '--use-fake-ui-for-media-stream', // Automatically allow media permissions
+            '--use-fake-device-for-media-stream',
+            '--use-file-for-fake-audio-capture=./src/extensions/test.wav'
+
         ],
     });
 }

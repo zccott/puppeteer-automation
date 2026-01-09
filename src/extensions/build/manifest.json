@@ -1,42 +1,47 @@
 {
-  "manifest_version": 3,
-  "name": "Quipo Browser Extension",
-  "version": "1.0",
-  "description": "A browser extension for the quipo ai scribe.",
-  "permissions": ["activeTab", "scripting", "tabs"],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
+    "manifest_version": 3,
+    "name": "Quipo Browser Extension",
+    "version": "1.0",
+    "description": "A browser extension for the quipo ai scribe.",
+    "permissions": ["activeTab", "scripting", "tabs", "offscreen"],
+    "background": {
+      "service_worker": "background.js",
+      "type": "module"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "quipoLogo.png",
+        "48": "quipoLogo.png",
+        "128": "quipoLogo.png"
+      }
+    },
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "static/js/main.js",
+          "static/css/main.css",
+          "offScreen.html",
+          "offScreen.js"
+        ],
+        "matches": ["https://oscaremr.quipohealth.com/*"]
+      }
+    ],
+    "host_permissions": [
+      "https://oscaremr.quipohealth.com/*",
+      "https://api.aiscribe.quipohealth.com/*"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["https://oscaremr.quipohealth.com/oscar/provider/*"],
+        "js": ["contentScript.js"],
+        "run_at": "document_end"
+      }
+    ],
+    "icons": {
       "16": "quipoLogo.png",
       "48": "quipoLogo.png",
       "128": "quipoLogo.png"
     }
-  },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "static/js/main.js",
-        "static/css/main.css",
-        "media/Roboto-Regular..ttf",
-        "media/quipoLogo.png"
-      ],
-      "matches": ["https://oscaremr.quipohealth.com/*"]
-    }
-  ],
-  "host_permissions": ["https://oscaremr.quipohealth.com/*"],
-  "content_scripts": [
-    {
-      "matches": ["https://oscaremr.quipohealth.com/*"],
-      "js": ["contentScript.js"],
-      "run_at": "document_end"
-    }
-  ],
-  "icons": {
-    "16": "quipoLogo.png",
-    "48": "quipoLogo.png",
-    "128": "quipoLogo.png"
   }
-}
+  

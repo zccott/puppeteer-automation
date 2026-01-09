@@ -11,7 +11,7 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
 
       # Step to check out the code from the repository
@@ -29,27 +29,28 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            libnss3 \
-            libatk-bridge2.0-0 \
-            libxss1 \
-            libgconf-2-4 \
-            libgtk-3-0 \
-            libx11-xcb1 \
-            libdbus-glib-1-2 \
-            libxtst6 \
-            fonts-liberation \
-            libappindicator3-1 \
-            libasound2
+              ca-certificates \
+              fonts-liberation \
+              libasound2 \
+              libatk1.0-0 \
+              libcups2 \
+              libgbm1 \
+              libnspr4 \
+              libpango-1.0-0 \
+              libxcomposite1 \
+              libxcursor1 \
+              libxrandr2 \
+              libxi6 \
+              libpangocairo-1.0-0 \
+              xdg-utils
 
       # Step to install Node.js project dependencies
       - name: Install dependencies
         run: npm install
-
       # Step to set the TARGET_DATE environment variable in PST
       - name: Set TARGET_DATE in PST
         run: |
           TZ="America/Los_Angeles" date '+TARGET_DATE=%Y-%m-%d' >> $GITHUB_ENV
-
       # Step to run the Puppeteer tests
       - name: Run Puppeteer tests
         env:

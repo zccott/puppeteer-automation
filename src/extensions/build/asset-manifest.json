@@ -2,11 +2,15 @@
   "files": {
     "main.css": "/static/css/main.css",
     "main.js": "/static/js/main.js",
-    "static/media/Roboto-Regular.ttf": "/static/media/Roboto-Regular..ttf",
-    "static/media/profilePic.png": "/static/media/profilePic..png",
+    "static/js/239.chunk.js": "/static/js/239.chunk.js",
+    "static/js/644.chunk.js": "/static/js/644.chunk.js",
+    "static/js/455.chunk.js": "/static/js/455.chunk.js",
     "index.html": "/index.html",
     "main.css.map": "/static/css/main.css.map",
-    "main.js.map": "/static/js/main.js.map"
+    "main.js.map": "/static/js/main.js.map",
+    "239.chunk.js.map": "/static/js/239.chunk.js.map",
+    "644.chunk.js.map": "/static/js/644.chunk.js.map",
+    "455.chunk.js.map": "/static/js/455.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.css",
